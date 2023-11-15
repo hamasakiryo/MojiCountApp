@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CountMemoListRow: View {
-    @ObservedObject var viewModel: ContentViewModel
+    @ObservedObject var viewModel: ViewModel
     var body: some View {
         VStack{
             HStack{
@@ -37,6 +37,6 @@ struct CountMemoListRow: View {
 
 #Preview {
     List{
-        CountMemoListRow(viewModel: ContentViewModel())
+        CountMemoListRow(viewModel: ViewModel())
     }
 }

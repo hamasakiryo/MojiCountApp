@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CountMemoListView: View {
-    @ObservedObject var viewModel = ContentViewModel()
+    @ObservedObject var viewModel = ViewModel()
     var body: some View {
         NavigationStack {
             List{

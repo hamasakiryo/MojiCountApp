@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CountSettingView: View {
-    @ObservedObject var viewModel: ContentViewModel
+    @ObservedObject var viewModel: ViewModel
     @Binding var isClose: Bool
     
     var body: some View {
@@ -58,5 +58,5 @@ struct CountSettingView: View {
 }
 
 #Preview {
-    CountSettingView(viewModel: ContentViewModel(), isClose: .constant(false))
+    CountSettingView(viewModel: ViewModel(), isClose: .constant(false))
 }

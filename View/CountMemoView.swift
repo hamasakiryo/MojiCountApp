@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CountMemoView: View {
-    @ObservedObject var viewModel: ContentViewModel
+    @ObservedObject var viewModel: ViewModel
     @State private var isShowCountSettingView = false
     
     var body: some View {
