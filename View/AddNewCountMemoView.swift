@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct CountMemoView: View {
+struct AddNewCountMemoView: View {
     @ObservedObject var viewModel: ViewModel
     @State private var isShowCountSettingView = false
-    
+    @EnvironmentObject var userData: UserData
     var body: some View {
         VStack {
             inputTitleTextField()
@@ -33,6 +33,11 @@ struct CountMemoView: View {
             }
             ToolbarItem(placement: .principal) {
                 CharacterCountResultLabelView()
+            }
+            ToolbarItem(placement: .topBarLeading) {
+                Button("完了") {
+                    createNewMemo()
+                }
             }
         }
     }
@@ -63,10 +68,17 @@ struct CountMemoView: View {
         
         Divider()
     }
+    
+    func createNewMemo() {
+        let newMemo = CountMemo(title: self.viewModel.countMemoTitle, content: self.viewModel.userInputText, characterCount: String(viewModel.countCharacters()), date: viewModel.date)
+        userData.memos.insert(newMemo, at: 0)
+        viewModel.countMemoTitle = ""
+        viewModel.userInputText = ""
+    }
 }
 
 #Preview {
     NavigationView {
-        CountMemoView(viewModel: ContentViewModel())
+        AddNewCountMemoView(viewModel: ViewModel())
     }
 }

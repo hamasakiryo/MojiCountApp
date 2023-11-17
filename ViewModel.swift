@@ -22,6 +22,7 @@ class ViewModel: ObservableObject {
     @Published var isEnclosedTextRemoved = false
     @Published var isCountDown = false
     
+    @Published var date = "2023\n11/23"
     ///条件に応じてuserInputTextを修正し、その文字数を返す関数
     func countCharacters() -> Int {
         var modifiedText = userInputText

@@ -47,7 +47,6 @@ struct CountSettingView: View {
             }
         }
     }
-    
     ///カウントダウン用の制限文字数を入力するテキストフィールドを生成する関数
     @ViewBuilder
     private func inputCharacterLimitTextField() -> some View {
